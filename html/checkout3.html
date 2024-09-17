@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Modal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<style>
+    /* Enhance modal appearance */
+.modal-content {
+    border-radius: 1rem; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.modal-header {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #fff; /* White text */
+    border-bottom: 2px solid #0056b3; /* Darker border for header */
+    border-top-left-radius: 1rem; /* Rounded corners for the top-left */
+    border-top-right-radius: 1rem; /* Rounded corners for the top-right */
+}
+
+.modal-title {
+    font-weight: bold; /* Bold title */
+}
+
+.modal-body {
+    padding: 2rem; /* Increased padding for content */
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef; /* Light border for footer */
+}
+
+.btn-primary {
+    background-color: #0056b3; /* Darker primary color */
+    border-color: #004494; /* Matching border color */
+}
+
+.btn-primary:hover {
+    background-color: #004494; /* Even darker on hover */
+    border-color: #003366; /* Darker border on hover */
+}
+
+/* Adjust form input fields */
+.form-control {
+    border-radius: 0.5rem; /* Rounded corners for input fields */
+    border: 1px solid #ced4da; /* Light border */
+}
+
+.form-group label {
+    font-weight: 500; /* Medium weight for labels */
+}
+
+#cartItems {
+    margin-bottom: 1rem; /* Space below cart items */
+}
+
+/* Customize cart item rows */
+.cart-item-image {
+    width: 50px; /* Set a consistent image size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.delete-button {
+    margin-top: 5px; /* Space above the button */
+}
+
+/* Modal backdrop for better visibility */
+.modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker backdrop */
+}
+
+</style>
+<!-- Button to open the modal -->
+<button class="btn btn-primary checkout-button">Checkout</button>
+
+<!-- The Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentModalLabel">Checkout</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="cartItems"></div>
+        <h4 id="subtotal">Subtotal: ₦0.00</h4>
+        <h4 id="discount">Discount: ₦0.00</h4>
+        <h4 id="total">Total: ₦0.00</h4>
+        <form id="paymentForm">
+          <div class="form-group">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+          </div>
+          <div class="form-group">
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" class="form-control" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV:</label>
+            <input type="text" class="form-control" id="cvv" name="cvv" placeholder="123" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Pay Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    // Update the displayCart function to update totals and open the modal
+
+// Open the modal and display the cart
+function showModal() {
+    $('#paymentModal').modal('show');
+}
+
+// Handle modal interactions and form submission
+function setupModal() {
+    const checkoutButton = document.querySelector('.checkout-button');
+    checkoutButton.addEventListener('click', () => {
+        displayCart(); // Populate cart items and totals
+        showModal(); // Show the modal
+    });
+
+    document.getElementById('paymentForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Integrate with your payment processing logic here
+        alert('Payment functionality to be implemented.');
+    });
+}
+
+window.onload = setupModal;
+
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="path/to/your/script.js"></script> <!-- Link your script here -->
+</body>
+</html>

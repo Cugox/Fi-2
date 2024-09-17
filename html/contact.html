@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vintage Volumes</title>
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/index2.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        :root {
+            --main-color: #FAD6A5;
+            --sub-color: #F3E9D2;
+            --hero-color: #e6dcc8;
+            --body_black: #B8C4BB;
+            --text-color: #0b4141;
+            --text-sub: #116666c2;
+            --hover: rgb(255, 224, 85);
+            --button: rgb(255, 184, 85);
+            --hovernav: rgb(184, 2, 2);
+            --navhov: hsl(44, 90%, 24%);
+            --navlink: hsl(14, 10%, 64%);
+            --blue: teal;
+            --offgray: hsla(100, 13%, 73%, 0.39);
+            --successgreen: rgb(194, 247, 194);
+            --offwhite: rgb(245, 245, 245);
+
+
+
+            --thirdc: #ff6864;
+        }
+
+        body {
+
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--offwhite);
+
+
+
+        }
+
+        .sub-text {
+            font-size: 1em;
+            font-style: italic
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            
+
+        }
+
+        .header1 {
+            text-decoration: underline;
+            line-height: 3;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .contact-info,
+        .contact-form,
+        .map {
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .contact-info h2,
+        .contact-form h2,
+        .map h2 {
+            margin-top: 0;
+        }
+
+        .contact-info p,
+        .contact-form p,
+        .map p {
+            margin: 0.5rem 0;
+        }
+
+        form label {
+            font-size: 1.2em;
+            font-weight: 500;
+            
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn-sub{
+            text-align: right;
+        }
+        .btn-sub button {
+            background-color: var(--button);
+            border-radius: 20px;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            
+        }
+
+
+        .btn-sub button:hover,
+        .btn-sub button:focus {
+            background-color: var(--button);
+            transform: scaleY(.9);
+            opacity: .9;
+        }
+
+        .social-media a {
+            margin: 0 0.5rem;
+            color: var(--text-sub);
+            text-decoration: none;
+        }
+
+        .social-media a:hover {
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .map {
+            width: 100%;
+        }
+
+        .map iframe {
+            width: 90%;
+        }
+
+        div section {
+            box-shadow: 2px 2px 2px rgb(105, 119, 119);
+            background-color: rgb(243, 242, 241);
+            border: solid 2px black;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light px-4  ">
+          <div class="container-fluid">
+             <!-- Toggler Button for Hamburger Menu -->
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span ><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6C20 6.55228 19.5523 7 19 7H5C4.44772 7 4 6.55228 4 6Z"/>
+                <path d="M4 18C4 17.4477 4.44772 17 5 17H19C19.5523 17 20 17.4477 20 18C20 18.5523 19.5523 19 19 19H5C4.44772 19 4 18.5523 4 18Z" />
+                <path d="M5 11C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H13C13.5523 13 14 12.5523 14 12C14 11.4477 13.5523 11 13 11H5Z" />
+              </svg></span>
+          </button>
+              <!-- Logo Section -->
+              <a class="navbar-brand" href="#">
+                  <img src="../images/navlogo.fw.png" alt="Logo" class="d-inline-block align-text-top">
+              </a>
+      
+             
+      
+              <!-- Nav Links Section -->
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav mx-auto">
+                      <li class="nav-item">
+                          <a class="nav-link " aria-current="page"  href="../landing.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link " href="../html/genre.html">Genres</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="../html/shop2.html">Shop </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="">Blog</a>
+                      </li>
+              <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              More
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="../html/event.html">Events</a></li>
+                              <li><a class="dropdown-item" href="../html/about.html">About Us</a></li>
+                              <li><a class="dropdown-item active" href="../html/contact2.html">Contact Us</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+      
+              <!-- Login Button Section -->
+              <div class="d-flex">
+                  <a class="btn btn-primary" href="../html/login.html" role="button">Login</a>
+              </div>
+          </div>
+      </nav>
+      
+      </header>
+    <section class="header1">
+        <h1>Contact Us</h1>
+        <p>We're here to help!</p>
+    </section>
+    <section>
+        <div class="container ">
+            <section class="contact-info">
+                <h2>Contact Information</h2>
+
+                <p><strong>Store Address:</strong> 123 Book Street, Biblioville, Pajure, Lagos</p>
+                <p><strong>Phone Number:</strong> +234 800 9489 678</p>
+                <p><strong>Email Address:</strong> <a href="mailto: info@vintagev.com"> info@vintagev.com</a></p>
+                <div class="social-media">
+                    <p><strong>Social Media:</strong> <a href="#">Facebook</a>
+                        <a href="#">X(Formerly Twitter)</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Tiktok</a>
+                        <a href="#">Youtube</a>
+                    </p>
+
+                </div>
+            </section>
+
+            <section class="contact-form">
+                <h2>Get in Touch</h2>
+                <p class="sub-text">Are you having any issues or just need our help? </p>
+                <form action="/submit-form" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject">
+                        <option value="general">General Inquiry</option>
+                        <option value="order">Order Issue</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <div class="btn-sub">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="map text-center">
+                <h2>Find Us On The Map</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.9950269874516!2d3.3478157999999896!3d6.522309499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c2d736e3d07%3A0x8e0ea9502b40c96c!2s87%20Itire%20St%2C%20Idi%20Oro%2C%20Lagos%20102215%2C%20Lagos!5e0!3m2!1sen!2sng!4v1724082817917!5m2!1sen!2sng"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        </div>
+    </section>
+    <footer class="  pt-4 pb-2">
+        <div class="container">
+            <div class="row">
+                <!-- About Us -->
+                <div class="col-md-4 mb-3">
+                    <h5>About Us</h5>
+                    <p>We are an online bookstore committed to bringing you the best books at great prices. Discover new
+                        titles, bestsellers, and hidden gems all in one place.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Home</a></li>
+                        <li><a href="#" class="text-light">Shop</a></li>
+                        <li><a href="#" class="text-light">Contact</a></li>
+                        <li><a href="#" class="text-light">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-3">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a href="mailto:info@bookstore.com" class="text-light">info@vintagev.com</a></p>
+                    <p>Phone: +234 800 9489 678</p>
+                    <p>Address: 123 Book Street, Biblioville, Pajure, Lagos</p>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="row justify-content-around ">
+                <div class="col-auto social-icons">
+                    <a href="#" class="text-light mr-2 px-4"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-light mr-2 px-4"><i class="fa-brands fa-x-twitter fa-bounce"></i></a>
+                    <a href="#" class="text-light mr-2 px-4"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-light px-4"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <p class="mb-0">&copy; 2024 Online Bookstore. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="../js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

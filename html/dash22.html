@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 3px;
+        }
+        .stats {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Store Dashboard</h1>
+        <form id="addBookForm">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="author" placeholder="Author" required>
+            <input type="number" id="price" placeholder="Price" step="0.01" required>
+            <input type="text" id="genre" placeholder="Genre (comma-separated)" required>
+            <input type="number" id="rating" placeholder="Rating" min="1" max="5" required>
+            <textarea id="summary" placeholder="Summary" required></textarea>
+            <input type="text" id="image" placeholder="Image URL" required>
+            <button type="submit">Add Book</button>
+        </form>
+        <ul id="bookList"></ul>
+        <div class="stats">
+            <p>Total Books: <span id="totalBooks">0</span></p>
+            <p>Total Value: $<span id="totalValue">0.00</span></p>
+            <p>Average Rating: <span id="averageRating">0.0</span></p>
+        </div>
+    </div>
+
+    <script>
+        const initialBooks = [
+            { title: "Great Circle", author: "Maggie Shipstead", price: 9.99, genre: ["fiction", "historical"], rating: 4, summary: "Great Circle by Maggie Shipstead is a historical novel that follows the life of Marian Graves, an ambitious aviator in the 1930s who strives to complete a round-the-world flight. Her daring journey is marked by numerous challenges and societal obstacles. The novel also includes a modern-day storyline about Hadley Baxter, an actress cast in a film about Marian, exploring the enduring impact of Marian's adventurous spirit.", image: "../images/book4.jpg" },
+            { title: "Klara and the Sun", author: "Kazuo Ishiguro", price: 14.99, genre: ["fiction", "science fiction"], rating: 5, summary: "Klara and the Sun by Kazuo Ishiguro is a thought-provoking novel that explores themes of artificial intelligence and human emotion through the perspective of Klara, an Artificial Friend who observes and reflects on human behavior. The story delves into Klara's experiences and her search for a deeper understanding of her world.", image: "../images/book3.jpg" },
+            { title: "Becoming", author: "Michelle Obama", price: 5.99, genre: ["biography",'memoir'], rating: 2, Summary: ["Becoming by Michelle Obama is an inspiring memoir that chronicles the former First Lady's journey from her childhood on the South Side of Chicago to her role in the White House. The book offers an intimate look at her personal growth, public life, and the values that have shaped her."], image: "../images/becoming.jpg" },
+        { title: "The Vanishing Half", author: "Brit Bennett", price: 7.99, genre: ["fiction", "literary"], rating: 4.7, Summary: ["The Vanishing Half by Brit Bennett explores the lives of twin sisters whose paths diverge when one decides to live as a Black woman and the other as white. The novel delves into themes of identity, family, and the impact of choices across generations."], image: "../images/vanishing-half.jpeg" },
+        { title: "Normal People", author: "Sally Rooney", price: 7.99, genre: ["fiction", "romance"], rating: 4.6, Summary: ["Normal People by Sally Rooney follows the complex relationship between Connell and Marianne, two young adults from a small town in Ireland. The novel captures their evolving connection and personal growth over the years, highlighting themes of love, social class, and intimacy."], image: "../images/normal-people.jpg" },
+        { title: "The Subtle Art of Not Giving a F*ck", author: "Mark Manson", price: 11.99, genre: ["nonfiction", 'self-help'], rating: 4.5, Summary: ["The Subtle Art of Not Giving a F*ck by Mark Manson offers a refreshing perspective on living a meaningful life. It challenges conventional self-help advice and emphasizes the importance of focusing on what truly matters by embracing life's challenges and limitations."], image: "../images/subtle-art.jpg" },
+        { title: "The Alchemist", author: "Paulo Coelho", price: 7.99, genre: "fiction", rating: 3, Summary: ["The Alchemist by Paulo Coelho is an inspiring tale of Santiago, a young shepherd who dreams of finding treasure. His journey across the desert to discover his Personal Legend is a profound exploration of destiny, dreams, and the pursuit of happiness."], image: "../images/alchemist.png" },
+        { title: "Half of a Yellow Sun", author: "Chimamanda Ngozi Adichie", price: 12.99, genre: "fiction", rating: 4.7, Summary: ["Half of a Yellow Sun by Chimamanda Ngozi Adichie provides a powerful narrative of the Nigerian Civil War through the lives of its characters. The novel intertwines personal and political struggles, offering a poignant depiction of the impact of war on individual lives and society."], image: "../images/half-yellow-sun.jpg" },
+        { title: "Americanah", author: "Chimamanda Ngozi Adichie", price: 14.99, genre: "fiction", rating: 4.8, Summary: ["Americanah by Chimamanda Ngozi Adichie explores the journey of Ifemelu, a Nigerian woman who moves to the United States for college and experiences the complexities of race, identity, and belonging. The novel offers insightful commentary on cultural differences and self-discovery."], image: "../images/americanah.jpg" },
+        { title: "The Fisherman", author: "Chigozie Obioma", price: 9.99, genre: "fiction", rating: 4.6, Summary: ["The Fishermen by Chigozie Obioma tells the haunting story of four brothers in Nigeria whose lives are changed by a prophecy. The novel is a blend of magical realism and family drama, offering a unique and impactful narrative on fate and family dynamics."], image: "../images/fishermen.jpeg" },
+        { title: "Things Fall Apart", author: "Chinua Achebe", price: 11.99, genre: "classic", rating: 4.9, Summary: ["Things Fall Apart by Chinua Achebe is a seminal work in African literature, depicting the life of Okonkwo, a respected leader in a pre-colonial Nigerian village. The novel explores the impact of colonialism and cultural change on traditional societies."], image: "../images/things-fall-apart.jpg" },
+        { title: "Purple Hibiscus", author: "Chimamanda Ngozi Adichie", price: 15.99, genre: "fiction", rating: 4.7, Summary: ["Purple Hibiscus by Chimamanda Ngozi Adichie is a compelling family drama set in Nigeria. It focuses on the life of Kambili and her family, revealing the tension between a strict, authoritarian father and the struggle for personal freedom and identity."], image: "../images/purple-hibiscus.jpg" },
+        { title: "Glory", author: "NoViolet Bulawayo", price: 6.99, genre: ["fiction", "nonfiction"], rating: 4.5, Summary: ["Glory by NoViolet Bulawayo is a striking debut novel that uses allegory to address contemporary Zimbabwean politics and history. Through the lens of a fictional animal society, the novel critiques power and corruption in a powerful and imaginative way."], image: "../images/noviolet-bulawayo.jpg" },
+        { title: "Born a Crime", author: "Trevor Noah", price: 9.99, genre: "memoir", rating: 4.8, Summary: ["Born a Crime by Trevor Noah is a humorous and poignant memoir about growing up in South Africa under apartheid. Noah shares his experiences with wit and insight, exploring themes of identity, resilience, and the challenges of his upbringing."], image: "../images/born-a-crime.jpg" },
+        { title: "The Joys of Motherhood", author: "Buchi Emecheta", price: 14.49, genre: "nonfiction", rating: 4.6, Summary: ["The Joys of Motherhood by Buchi Emecheta is a powerful portrayal of motherhood in Nigeria. The novel follows the life of Nnu Ego, a woman struggling with societal expectations and personal aspirations, offering a candid and impactful view of her experiences."], image: "../images/joys-motherhood.jpg" },
+        { title: "Sapiens: A Brief History of Humankind", author: "Yuval Noah Harari", price: 14.99, genre: "nonfiction", rating: 4.6, Summary: ["Sapiens by Yuval Noah Harari explores the history of humanity from the emergence of Homo sapiens in the Stone Age to the present. The book examines how human societies have evolved and how cultural, economic, and scientific developments have shaped the modern world."], image: "../images/sapiens.jpg" },
+        { title: "When Breath Becomes Air", author: "Paul Kalanithi", price: 6.99, genre: "memoir", rating: 4.7, Summary: ["When Breath Becomes Air by Paul Kalanithi is a poignant memoir by a neurosurgeon diagnosed with terminal cancer. The book reflects on his transition from doctor to patient and explores themes of mortality, the meaning of life, and the intersection of medicine and personal experience."], image: "../images/when-breath-becomes-air.jpg" },
+        { title: "Gone Girl", author: "Gillian Flynn", price: 4.99, genre: "thriller", rating: 4.2, Summary: ["Gone Girl by Gillian Flynn is a psychological thriller about a woman who goes missing on her fifth wedding anniversary, and the subsequent media frenzy and police investigation that ensue. The novel delves into the complexities of marriage, deception, and the search for truth."], image: "../images/gone-girl.jfif" },
+        { title: "The Girl with the Dragon Tattoo", author: "Stieg Larsson", price: 8.49, genre: "thriller", rating: 4.4, Summary: ["The Girl with the Dragon Tattoo by Stieg Larsson is a gripping thriller that follows journalist Mikael Blomkvist and hacker Lisbeth Salander as they investigate a decades-old disappearance in Sweden. The novel combines elements of mystery, crime, and intrigue with a complex, suspenseful plot."], image: "../images/girl-with-dragon-tattoo.jpg" },
+        { title: "Behold the Dreamers", author: "Imbolo Mbue", price: 4.9, genre: "fiction", rating: 4.7, Summary: ["Behold the Dreamers by Imbolo Mbue is a compelling novel that examines the lives of two families in New York City—one wealthy and one struggling. The story provides a poignant look at immigration, ambition, and the pursuit of the American Dream."], image: "../images/behold-dreamers.jpg" },
+        { title: "Daring Greatly", author: "Brené Brown", price: 16.99, genre: "self-help", rating: 4.8, Summary: ["Daring Greatly by Brené Brown explores the power of vulnerability and the importance of embracing imperfection. Brown argues that true courage involves being open to risk and vulnerability, and she provides strategies for cultivating meaningful connections and a resilient mindset."], image: "../images/daring-greatly.jpg" },
+        { title: "Grit", author: "Angela Duckworth", price: 3.99, genre: "self-help", rating: 4.6, Summary: ["Grit by Angela Duckworth delves into the concept of grit—passion and perseverance for long-term goals. Duckworth combines research with personal anecdotes to explain how grit can be developed and how it contributes to success and achievement in various areas of life."], image: "../images/grit.jpeg" },
+        { title: "The Power of Now", author: "Eckhart Tolle", price: 14.99, genre: "self-help", rating: 4.7, Summary: ["The Power of Now by Eckhart Tolle focuses on the significance of living in the present moment. Tolle provides insights and practices for overcoming the distractions of the mind and achieving a state of presence, which he argues is key to experiencing inner peace and fulfillment."], image: "../images/power-of-now.jpg" },
+        { title: "For God, country and Coca-Cola", author: "Pendergrast M", price: 9.32, genre: ['nonfiction', 'historical'], rating: 4.7, Summary: [' The unauthorized history of the great American soft drink and the company that makes it. From its origins as a patent medicine in Reconstruction Atlanta through its rise as the dominant consumer beverage of the American century, the story of Coke is as unique, tasty, and effervescent as the drink itself. With vivid portraits of the entrepreneurs who founded the company'], image: "../images/forGodLoveAndCountry_nonFic.jpg" },
+
+        ];
+        
+        let books = [];
+        
+        function loadBooks() {
+            const storedBooks = localStorage.getItem('books');
+            if (storedBooks) {
+                books = JSON.parse(storedBooks);
+            } else {
+                books = initialBooks;
+                saveBooks();
+            }
+            displayBooks();
+            updateStats();
+        }
+        
+        function saveBooks() {
+            localStorage.setItem('books', JSON.stringify(books));
+        }
+        
+        function addBook(event) {
+            event.preventDefault();
+            const newBook = {
+                title: document.getElementById('title').value.trim(),
+                author: document.getElementById('author').value.trim(),
+                price: parseFloat(document.getElementById('price').value),
+                genre: document.getElementById('genre').value.split(',').map(g => g.trim()),
+                rating: parseInt(document.getElementById('rating').value),
+                summary: document.getElementById('summary').value.trim(),
+                image: document.getElementById('image').value.trim()
+            };
+        
+            // Basic validation
+            if (!newBook.title || !newBook.author || isNaN(newBook.price) || !newBook.genre.length || isNaN(newBook.rating) || newBook.rating < 1 || newBook.rating > 5 || !newBook.summary || !newBook.image) {
+                alert('Please fill in all fields correctly.');
+                return;
+            }
+        
+            books.push(newBook);
+            saveBooks();
+            displayBooks();
+            updateStats();
+            document.getElementById('addBookForm').reset();
+        }
+        
+        function removeBook(index) {
+            books.splice(index, 1);
+            saveBooks();
+            displayBooks();
+            updateStats();
+        }
+        
+        function displayBooks() {
+            const bookList = document.getElementById('bookList');
+            bookList.innerHTML = '';
+            books.forEach((book, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `${book.title} by ${book.author} - $${book.price} <button onclick="removeBook(${index})">Remove</button>`;
+                bookList.appendChild(li);
+            });
+        }
+        
+        function updateStats() {
+            const totalBooks = books.length;
+            const totalValue = books.reduce((sum, book) => sum + book.price, 0);
+            const averageRating = totalBooks > 0 ? books.reduce((sum, book) => sum + book.rating, 0) / totalBooks : 0;
+        
+            document.getElementById('totalBooks').textContent = totalBooks;
+            document.getElementById('totalValue').textContent = totalValue.toFixed(2);
+            document.getElementById('averageRating').textContent = averageRating.toFixed(1);
+        }
+        
+        document.getElementById('addBookForm').addEventListener('submit', addBook);
+        window.onload = loadBooks;
+        </script>
+        
+</body>
+</html>

@@ -1,0 +1,116 @@
+
+body {
+    background-color: #f5f5f5;
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='16' viewBox='0 0 84 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M78 7V4h-2v3h-3v2h3v3h2V9h3V7h-3zM30 7V4h-2v3h-3v2h3v3h2V9h3V7h-3zM10 0h2v16h-2V0zm6 0h4v16h-4V0zM2 0h4v16H2V0zm50 0h2v16h-2V0zM38 0h2v16h-2V0zm28 0h2v16h-2V0zm-8 0h6v16h-6V0zM42 0h6v16h-6V0z' fill='%23f7e7c2' fill-opacity='0.45' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+.about-section {
+    padding: 50px 0;
+}
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.about-section .container .text-center .row {
+    display: flex;
+    justify-content: center;
+}
+.team-member img {
+    min-width: 210px;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+.team-member:hover img {
+    transform: scale(1.01);
+}
+.call-to-action {
+    margin-top: 30px;
+    text-align: center;
+}
+.about-section p {
+    font-size: 1.2rem;
+}
+.text-center h2 {
+    padding: 2px;
+    text-decoration: underline rgb(58, 55, 55);
+}
+.text-center h5 {
+    font-size: 1.5rem;
+    padding: 4px;
+}
+.row .card {
+    margin: 5px 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 228, 196, 0.651);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.row .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.community_btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.community_btn:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInFromRight 1s ease-out;
+}
+
+/* Apply animations to specific elements */
+.about-section h1 {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.about-section .row:first-of-type .col-md-6:first-child {
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.about-section .row:first-of-type .col-md-6:last-child {
+    animation: slideInFromRight 1s ease-out;
+}
+
+.abt-name {
+    animation: fadeIn 1.5s ease-out 0.5s both;
+}
+
+.team-member {
+    animation: fadeIn 1.5s ease-out 1s both;
+}

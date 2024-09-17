@@ -1,0 +1,88 @@
+
+.container-f {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    
+}
+
+body{
+    background-image: url(../images/hero_bg.fw.png);
+    background-repeat: none;
+    background-size: cover;
+   
+    overflow-y: scroll;
+}
+form{
+    width :510px;
+    background-color: rgba(233, 234, 235, 0.555);
+    border-radius: 20px;
+   transition: cubic-bezier(0.19, 1, 0.22, 1);
+}
+form:hover,
+form:focus{
+    box-shadow: 2px 2px 2px rgb(80, 70, 58);
+    transform: translatey(-3px);
+}
+.dash_form{
+    padding: 5%;
+   
+}
+.form-control.w-80 {
+    width: 90%;
+  }
+
+.small {
+    font-size: 13px !important;
+    opacity: .7;
+  } 
+
+.small:hover{
+    opacity: 1;
+}
+
+.buttin{
+    padding-right: 10px;
+    text-align: right !important;
+    margin-top: 20px;
+    /* outline: solid; */
+    
+   
+}
+.form-check-input:checked {
+    background-color: var(--body_black);
+        border-color:var(--thirdc); 
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 .125rem rgba(196, 74, 74, 0.25); /* Customize the focus shadow */
+}
+
+.btn a{
+    text-decoration: none;
+    color: inherit;
+
+}
+button{
+    /* box-shadow: 2px 2px 2px rgba(91, 248, 175, 0.37) !important; */
+    padding: 3px 10px !important;
+    
+}
+input{
+    border: 2px solid rgba(128, 128, 128, 0.37)!important;
+    max-width: 400px !important;
+    color: var(--text-color) !important;
+}
+
+
+
+/* sign up */
+.main-signup  label{
+    padding-top: 4px;
+    color: var(--text-color);
+    
+}
+.submit  a{
+    color:var(--text-sub)   !important;
+}

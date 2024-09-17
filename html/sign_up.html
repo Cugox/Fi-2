@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-up</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/landing.css">
+  <link rel="stylesheet" href="../css/index2.css">
+  <link rel="shortcut icon" href="../images/loggo.PNG" type="image/x-icon">
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light px-4  ">
+      <div class="container-fluid">
+        <!-- Toggler Button for Hamburger Menu -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4 6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6C20 6.55228 19.5523 7 19 7H5C4.44772 7 4 6.55228 4 6Z" />
+              <path
+                d="M4 18C4 17.4477 4.44772 17 5 17H19C19.5523 17 20 17.4477 20 18C20 18.5523 19.5523 19 19 19H5C4.44772 19 4 18.5523 4 18Z" />
+              <path
+                d="M5 11C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H13C13.5523 13 14 12.5523 14 12C14 11.4477 13.5523 11 13 11H5Z" />
+            </svg></span>
+        </button>
+        <!-- Logo Section -->
+        <a class="navbar-brand" href="../landing.html">
+          <img src="../images/navlogo.fw.png" alt="Logo" class="d-inline-block align-text-top">
+        </a>
+
+
+
+        <!-- Nav Links Section -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="../landing.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../html/genre.html">Genres</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/shop2.html">Shop </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./blog.html">Blog</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                More
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="../html/event.html">Events</a></li>
+                <li><a class="dropdown-item" href="../html/bookclub.html">Book Club</a></li>
+                <li><a class="dropdown-item" href="../html/about.html">About Us</a></li>
+                <li><a class="dropdown-item" href="../html/contact2.html">Contact Us</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Login Button Section -->
+        <div class="d-flex">
+          <a class="btn btn-primary" href="../html/login.html" role="button">Login</a>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <main>
+
+    <section class="dash_form">
+      <div class="container-f p-3 outline   ">
+        <form action="" class="form-container  border p-5">
+          <div class="dash-text">
+            <h2 class="signup-header text-center">Signup</h2>
+            <p class="text-center"> Create your account to get full access</p>
+          </div>
+          <div class="main-signup ">
+            <label for="fullname">Full name</label>
+            <br>
+            <input type="text" id="fullname" placeholder="Fullname" class="form-control w-80">
+            <br>
+            <label for="email">Email Address</label>
+            <br>
+            <input type="email" id="email" placeholder="Enter email address" class="form-control w-80">
+            <br> 
+            <label for="Username">Username</label>
+            <br>
+            <input type="text" id="Username" placeholder="Enter a Username" class="form-control w-80">
+            <br>
+            <label for="password">Password</label>
+            <br>
+            <input type="password" id="password" placeholder="Enter password" class="form-control w-80">
+            <br>
+            <label for="password">Confirm Password</label>
+            <br>
+            <input type="password" id="password1" placeholder="Enter password again" class="form-control w-80">
+            <br>
+
+
+          </div>
+
+          <div>
+            <p class=" small text-start">Already have an account? <a href="./login.html">Login here</a></p>
+          </div>
+          <div class="btn-success buttin"><button class=" btn btn-success sub-text ">Sign Up</button></div>
+
+        </form>
+  </main>
+
+
+
+
+
+ <script src="../js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

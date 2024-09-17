@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <style>
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .book {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .book img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        .book-info {
+            flex: 1;
+        }
+        .book-info h2 {
+            margin: 0 0 10px;
+        }
+        .book-info p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Store</h1>
+        <input type="text" id="search" placeholder="Search books...">
+        <div id="bookList"></div>
+    </div>
+    <figcaption>
+        <cite>Nineteen Eighty-Four</cite>
+        by George Orwell.
+      </figcaption>
+      <!-- OR -->
+      <figcaption>
+        First sentence in
+        <cite><a href="http://www.george-orwell.org/1984/0.html">Nineteen Eighty-Four</a></cite>
+        by George Orwell (Part 1, Chapter 1).
+      </figcaption>
+
+    <script>
+    let allBooks = [];
+
+    function loadBooks() {
+        const storedBooks = localStorage.getItem('books');
+        if (storedBooks) {
+            allBooks = JSON.parse(storedBooks);
+            displayBooks(allBooks);
+        }
+    }
+
+    function displayBooks(books) {
+        const bookList = document.getElementById('bookList');
+        bookList.innerHTML = '';
+        books.forEach((book) => {
+            const bookDiv = document.createElement('div');
+            bookDiv.classList.add('book');
+            
+            bookDiv.innerHTML = `
+                <img src="${book.image}" alt="${book.title}">
+                <div class="book-info">
+                    <h2>${book.title}</h2>
+                    <p><strong>Author:</strong> ${book.author}</p>
+                    <p><strong>Price:</strong> $${book.price.toFixed(2)}</p>
+                    <p><strong>Rating:</strong> ${book.rating} / 5</p>
+                    <p><strong>Genres:</strong> ${book.genre.join(', ')}</p>
+                    <p><strong>Summary:</strong> ${book.summary}</p>
+                </div>
+            `;
+            
+            bookList.appendChild(bookDiv);
+        });
+    }
+
+    function searchBooks() {
+        const query = document.getElementById('search').value.toLowerCase();
+        const filteredBooks = allBooks.filter(book => 
+            book.title.toLowerCase().includes(query) ||
+            book.author.toLowerCase().includes(query) ||
+            book.genre.some(g => g.toLowerCase().includes(query))
+        );
+        displayBooks(filteredBooks);
+    }
+
+    document.getElementById('search').addEventListener('input', searchBooks);
+
+    window.onload = loadBooks;
+    </script>
+</body>
+</html>

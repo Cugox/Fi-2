@@ -1,0 +1,110 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero {
+    min-height: 500px;
+    background: url(../images/about-bg.fw.png)center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+    position: relative;
+}
+.hero-img-genre{
+  margin-right: px;
+  
+}
+.genre img {
+   width:200px ;
+    height: 300px;
+   
+}
+.genre{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    background-color: #fff2de;
+    box-shadow: 8px 13px 7px -3px rgba(0,0,0,0.1);
+    margin-bottom: 1em;
+}
+.genre:hover{
+    
+transform: translateY(4px);
+   transform: scale(1.03);
+   
+}
+.bookk .col-md-4 {
+    display: flex;
+    justify-content: center;
+}
+h2{
+  font-size:3em;
+}
+h5{
+    font-family: source;
+   font-weight: 600;
+}
+.card-text{
+    text-transform: capitalize;
+}
+.hero h1  {
+  font-size: 1.6em;
+  text-align: right;
+}
+.hero p{
+  font-size: 1rem;
+  text-align: right;
+}
+.hero .text-button{
+  text-align: right;
+}
+.hero .text-button button{
+  background-color:var(--button);
+ 
+
+
+}
+.hero .text-button button:hover{
+  background-color:var(--button);
+  opacity: 0.8  ;
+  color: rgb(40, 54, 43);
+}
+social-icons a  svg path{
+    width: 20px;
+}
+@media (max-width:1056px) {
+    .hero-img-genre{
+        padding-left: 20px;
+    }
+    .hero-img-genre img{
+        width: 390px;
+    }
+}
+@media (max-width:782px) {
+    .hero-img-genre{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+    }
+    .hero-img-genre img{
+        width: 300px;
+        
+    }
+    .col-md-1{
+        display: none;
+    }
+    .hero h1{
+        text-align: center;
+    }
+    .hero p{
+        text-align: center;
+    }
+    .hero .text-button{
+        text-align: center;
+    }
+}

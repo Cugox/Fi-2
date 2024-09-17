@@ -1,0 +1,287 @@
+
+body{
+    background-color: #f5f5f5;
+background-image: url("data:image/svg+xml,%3Csvg width='84' height='16' viewBox='0 0 84 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M78 7V4h-2v3h-3v2h3v3h2V9h3V7h-3zM30 7V4h-2v3h-3v2h3v3h2V9h3V7h-3zM10 0h2v16h-2V0zm6 0h4v16h-4V0zM2 0h4v16H2V0zm50 0h2v16h-2V0zM38 0h2v16h-2V0zm28 0h2v16h-2V0zm-8 0h6v16h-6V0zM42 0h6v16h-6V0z' fill='%23f7e7c2' fill-opacity='0.45' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+.book-cover {
+    max-width: 100%;
+    height: auto;
+}
+
+.book-item,
+.review-card,
+.book-of-the-week {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+
+}
+
+.book-item {
+    background-color: #fff;
+    width: fit-content;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px;
+
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+}
+
+.book-item img {
+    height: 300px;
+    border-radius: 10px;
+}
+
+.book-of-the-week {
+    background-color: #ffffff;
+}
+
+.book-of-the-week img {
+    height: 300px;
+}
+
+.review-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-custom {
+    background-color: #f5b351;
+    color: #1a1919;
+}
+
+.btn-custom:hover {
+    background-color: #ffa218;
+    color: #363232;
+}
+
+.text-center-custom {
+    text-align: center;
+}
+
+.review-card img {
+    height: 430px;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+.review-card h5 {
+    text-transform: capitalize;
+    font-family: source;
+    font-size: 1.5em;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.book-item h3 {
+
+    text-transform: capitalize;
+}
+
+.col-md-3 {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.text-muted {
+    font-size: 0.85em;
+}
+
+.card-text {
+    color: var(--text-sub);
+}
+
+.newcom_p {
+    font-weight: lighter;
+    color: var(--text-sub);
+}
+
+.book-summary {
+
+    text-align: center;
+
+
+}
+
+.blog-links {
+    display: flex;
+    justify-content: center;
+    max-height: 600px;
+    align-items: center;
+}
+.blog-links .forShad{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.forShad:hover{
+    transform: translatey(7px);
+}
+.blog_card {
+
+    line-height: 30px;
+    text-align: center;
+
+}
+
+.blog-link li {
+    list-style: circle;
+}
+
+.ni:hover {
+    opacity: 0.8;
+}
+
+.ni-auth {
+    color: var(--text-sub);
+}
+
+.ni-auth:hover {
+    color: #363232;
+}
+
+.bkw .card {
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bkw .card:hover {
+    transform: translateY(-5px);
+}
+
+.bkw .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.bkw .card-body {
+    background-color: #fff;
+}
+
+.bkw .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.bkw .card-subtitle {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.bkw .card-text {
+    font-size: 0.9rem;
+}
+
+.bkw .read-more {
+    font-size: 0.8rem;
+    color: #955a04;
+    text-decoration: none;
+}
+
+.bkw .read-time {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.blog-links {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.blog-links .card, .book-of-the-week-wrapper {
+flex: 1;
+display: flex;
+flex-direction: column;
+margin: 1rem; 
+}
+
+
+.blog-links .card, .book-of-the-week-wrapper {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+min-height: 300px; 
+}
+.read-snip{
+color: #494745 !important ;
+
+}
+.read-snip:hover{
+color: #ffa218 !important;
+}
+
+@media (max-width:991px) {
+    .review-card img{
+        height: 275.6px;
+    }
+ 
+
+.row.justify-content-center {
+flex-wrap: wrap;
+}
+
+
+}
+@media (max-width: 900px) {
+.blog-links {
+display: block;
+}
+
+}
+@media (max-width: 767px) {
+.blog-links {
+display: block;
+}
+
+.blog-links .card, .book-of-the-week-wrapper {
+display: block;
+min-height: auto; 
+}
+
+.book-of-the-week .row {
+display: block;
+}
+
+.book-of-the-week .col-sm-6 {
+margin-bottom: 1rem;
+}
+.book-item {
+width: auto;
+}
+.review-card{
+    width: 350px;
+}
+.critic_div {
+    display: grid;
+    justify-content: center;
+}
+.review-card img {
+    height:100%;
+}
+}
+@media (max-width:575px) {
+    .bkw .row{
+        margin: 2px 20px;
+    }
+    
+}
+@media (max-width: 450px) {
+.review-card{
+    width: 250px;
+}
+}

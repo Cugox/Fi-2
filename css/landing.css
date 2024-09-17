@@ -1,0 +1,466 @@
+
+
+*{
+  list-style: none;
+  text-decoration: none;
+  color:var(--text-color);
+  margin: 0;
+
+  
+  
+  
+ 
+  
+  
+
+}
+
+
+body{
+ 
+  background-color: var(--offwhite);
+  padding: 0 0px;
+  
+  
+}
+
+a{
+  text-decoration: none  ;
+  color: var(--text-color);
+} 
+
+
+header a{
+  text-decoration: none;
+  
+}
+
+
+/* hero */
+
+
+.hero-section{
+  background-image: url('../images/hero_bg.fw.png');
+  background-size:cover;
+  background-repeat:no-repeat;
+  min-height: 80svh;
+  padding:20px;
+  overflow-y: unset;  
+  display: flex;
+  align-items: center !important;
+}
+.hero-section h2{
+  font-weight: 600;
+}
+
+.hero_img{
+  
+  
+ }
+.hero_text,
+.hero_txt
+{
+  display: block  ;
+  text-align: justify;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.1rem;
+}
+
+.hero-btn button{
+  
+  font-size: 1.1rem;
+  border-radius: 10px;
+  padding: 5px 8px;
+  
+
+  border: none  ;
+  color: var(--text-color);
+    background-color: var(--button);
+  transition: ease .5s 20ms ;
+ 
+  
+}
+
+.hero-btn button:hover,
+.hero-btn button:focus{
+  background-color: var(--button);
+  
+  transform: scale(1.04);
+  opacity: 0.7;
+}
+
+
+
+/* Categories s */
+/* General styles for the section */
+.categ {
+  padding: 20px;
+  background-color:var(--offwhite) ;
+}
+
+.categ-container {
+   /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Card styles */
+.categ-card {
+  background-color: #f8f9fa; /* Default light background color */
+  border: 1px solid #dee2e6; /* Border for the card */
+  border-radius: 8px; /* Rounded corners */
+  width: 200px; /* Fixed width */
+  height: 270px; /* Fixed height */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  margin: 10px; /* Margin between cards */
+}
+
+/* Hover effects */
+.categ-card:hover {
+  color: #fff; /* Change text color on hover */
+}
+
+.categ-card.card-fiction:hover {
+  background-color: #007bff; /* Fiction card background color */
+}
+
+.categ-card.card-nonfiction:hover {
+  background-color: #28a745; /* Non-Fiction card background color */
+}
+
+.categ-card.card-classics:hover {
+  background-color: #ffc107; /* Classics card background color */
+}
+
+.categ-card.card-local:hover {
+  background-color: #17a2b8; /* Local Authors card background color */
+}
+
+.categ-card.card-kids:hover {
+  background-color: #fd7e14; /* Kids card background color */
+}
+
+.categ-card.card-fantasy:hover {
+  background-color: #6f42c1; /* Fantasy & Sci-fi card background color */
+}
+.category-header{
+  font-size: 2em;
+  text-shadow:1px 1px 1px #b8bfc5;
+  text-transform: capitalize;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+  .categ-card {
+    width: 150px; /* Adjusted width for smaller screens */
+    height: 200px; /* Adjusted height for smaller screens */
+    font-size: 14px;
+    padding: 15px;
+  }
+  .social-container{
+    margin-right: 20px;
+  }
+  .heroimg{
+    width: 400px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .review{
+    margin: 8px 0px !important;
+    
+  }
+
+}
+
+
+/* categories end */
+
+/*   Upcoming*/
+.upcoming-events{
+  background-color: var(--offwhite)  ;
+}
+.upcoming-events .card {
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  color: var(--text-color);
+
+}
+
+.upcoming-events .card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.upcoming-events .card-title {
+  color: var(--text-color);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.upcoming-events .btn {
+  font-size: 1.1rem;
+  border-radius: 10px;
+  padding: 5px 8px;
+  
+
+  border: none  ;
+  color: var(--text-color);
+    background-color: var(--button);
+  transition: ease .5s 20ms ;
+}
+
+.upcoming-events .btn:hover {
+  transform: translateY(-1.4px);
+  background-color: var(--button);
+  opacity: 0.8;
+}
+
+.upcoming-events .book-cover {
+  max-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.upcoming-events p{
+  color: var(--text-sub);
+}
+@media (max-width: 767px) {
+  .upcoming-events .card {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+/* upcoming end */
+
+/* Newsletter */
+
+/* Custom styles for the review section */
+.newsletter{
+  background-color: var(--offwhite);
+}
+.newsletter .testing{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../images/hero_bg.fw.png);
+}
+.newsletter  .btn{
+
+  margin: 20px 3px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  padding: 5px 8px;
+  border: none  ;
+  color: var(--text-color);
+    background-color: var(--button);
+  transition: ease .5s 20ms ;
+}
+.newsletter .btn:hover{
+  background-color: var(--button);
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+.newsletter .cust-review{
+  background: url(../images/hero_bg.fw.png) ;
+  
+
+}
+.review {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin: 7px;
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.review-author {
+  font-weight: bold;
+}
+
+/* Custom styles for the form */
+.form-inline {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-inline .form-control {
+  margin-bottom: 10px;
+}
+
+.form-inline .btn {
+  align-self: flex-start;
+}
+.event h5{
+  color: var(--text-color);
+}
+
+/* news end */
+
+/*  */
+/* Custom styles for the carousel */
+.carousel-section {
+  background-color: var(--offwhite); /* Light background color */
+}
+
+.carousel-item {
+  padding: 20px;
+}
+
+.carousel-item img {
+  max-width: 100%; /* Ensure images are responsive */
+}
+
+.carousel-item .btn-primary {
+  margin-top: 10px;
+}
+
+.carousel-indicators {
+  bottom: -30px; /* Adjust position of the indicators */
+}
+
+.carousel-indicators li {
+  background-color: #a2c7ee; /* Indicator color */
+  border-radius: 50%; /* Make indicators round */
+  width: 12px; /* Size of indicators */
+  height: 12px;
+}
+
+.carousel-indicators .active {
+  background-color: #0056b3; /* Color for the active indicator */
+}
+
+ .carousel-control-prev,
+.carousel-control-next {
+  font-size: 30px;
+ 
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  /* background-color: rgba(255, 255, 255, 0.5); Background color for icons */
+  border-radius: 0%; /* Round background */
+  font-size: 100px;
+  
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+  font-size: 3rem; /* Increase icon size */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  color: #0056b3; /* Color on hover */
+  background-color: var(--hero-color) ;
+  border-radius: 50%;
+}
+.edi_img {
+  max-width: 300px;
+  object-fit: contain;
+}
+/*  */
+/* Contact */
+.contact {
+  background-color: var(--offwhite);
+  
+  padding: 200px 0;
+  z-index: 1;
+  height: 50vh auto;
+}
+.contact::after {
+  position: absolute;
+  content: "";
+  /* background-image: url(../../assets/images/contact/icon_contact.svg);
+  background-repeat: no-repeat; */
+  height: 50vh;
+  width: 100%;
+
+  /* background-size: contain;
+  background-position: center;
+  top: 0px;
+  z-index: -1; */
+}
+.contact_span{
+  color: var(--text-sub);
+}
+.contact button{
+  font-size: 1.1rem;
+  border-radius: 20px;
+  padding: 3px 7px;
+  
+  
+  border: none  ;
+  background-color: var(--body_black);
+  transition: ease-in-out .5s 20ms ;
+}
+.contact button:hover{
+  background-color: var(--button);
+  transform: scale(1.1);
+
+}
+
+/* c end */
+
+
+
+
+
+/* hero ending */
+/* Footer styles */
+footer {
+  background-color: var(--offwhite); /* Dark background color */
+}
+
+footer h5 {
+  border-bottom: 2px solid #007bff; /* Bottom border for headings */
+  padding-bottom: 10px;
+}
+
+footer a {
+  text-decoration: none; /* Remove underline from links */
+  
+}
+footer .text-light{
+  color: var(--text-color) !important;
+}
+footer .text-light:hover{
+  color:var(--text-sub)!important;
+  opacity: 0.8 !important;
+}
+
+footer a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+footer .text-light {
+  color: #f8f9fa; /* Light text color */
+}
+
+footer .text-light:hover {
+  color: #007bff; /* Light blue color on hover for links */
+}
+footer .social-icons a i{
+  font-size: 24px;
+}
+@media (max-width:1000px) {
+  .main_nav{
+    margin-left: auto;
+    
+
+  }
+  .nav-account{
+    display: none
+  }
+}
